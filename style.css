@@ -1,117 +1,100 @@
-body {
-    margin: 0;
-    font-family: 'Inclusive Sans', sans-serif;
-    background: linear-gradient(70deg, blue, purple, pink);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
 }
-
-h1 {
-    text-align: center;
-    font-size: 100px;
-}
-
-.Con-2 {
-    display: none;
-}
-
-canvas {
-    display: block;
-}
-
-.Contenedor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+    color: azure;
+    width: 100%;
     height: 100vh;
-    margin: 0;
-}
-
-.Con {
     display: flex;
-    place-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-top: 15px;
-}
-
-.Texto {
-    display: none;
-}
-
-.Texto h2 {
-    font-size: 50px;
-}
-
-#B12 {
-    margin-left: 30px;
-}
-
-.Button{
-    font-family: monospace;
-    font-size: x-large;
-    transition-duration: 0.2s;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: greenyellow; 
-    color: black; 
-    border: 2px solid green;
-    cursor: pointer;
-}
-  
-.Button:hover{
-    transform: scale(1.1);
-    border-radius: 14px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    color: black;
-    background-color: white;
-}
-
-.Contenedor-Binicio {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+    background-color: black;
 }
-
-.Con-Emergente{
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    display: flex;
+.greetings{
+    font-size: 6rem;
+    font-weight: 900;
 }
-
-.cua{
-    display: none;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border: 2px solid greenyellow;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    animation: aparecer 0.5s ease-out;
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
 }
-
-@keyframes aparecer {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-20px);
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
     }
-    50% {
-      opacity: 0.5;
-      transform: translateX(-50%) translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-}
-
-@media (max-width: 468px) {
-    body {
-        background: linear-gradient(100deg, blue, purple, pink);
-
+    10%, 90%{
+        color: #696565;
+        text-shadow: none;
     }
 }
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button a{
+        font-size: .5rem;
+    }
+}
+
+.description{
+    color: #fbff00;
+}
+
+/* Estilo para el botón */
+.button button {
+    background-color: yellow; /* Fondo amarillo */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Ajusta el relleno según tu preferencia */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer;
+    position: relative; /* Necesario para el resplandor */
+    border-radius: 20px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
+  }
+  
+  /* Estilo para el enlace dentro del botón */
+  .button button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del botón */
+  }
+  
+  /* Efecto de resplandor al pasar el cursor sobre el botón */
+  .button button:hover {
+    background-color: orange; /* Cambia el color de fondo al pasar el mouse a naranja */
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Efecto de resplandor amarillo */
+  }
+  
+  

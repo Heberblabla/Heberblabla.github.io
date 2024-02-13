@@ -1,0 +1,322 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #aa0093;
+  overflow: hidden;
+}
+
+.chocolate-box {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  cursor: pointer;
+}
+.chocolate-box:before,
+.chocolate-box:after {
+  content: "";
+  position: absolute;
+}
+.chocolate-box:before {
+  width: 160px;
+  height: 160px;
+  background-color: #4b301b;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  box-shadow: 10px 10px #392312;
+}
+
+.chocolate-box:after {
+  width: 68px;
+  height: 68px;
+  background-color: #2b0900;
+  top: 81px;
+  left: 80px;
+  box-shadow: 70px 0 #2b0900, 70px 70px #2b0900, 0 70px #2b0900;
+}
+.chocs {
+  position: absolute;
+  z-index: 1;
+}
+.top-left {
+  top: 92px;
+  left: 90px;
+}
+.top-left,
+.bottom-right {
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #d12511;
+  box-shadow: 20px 0 #d12511;
+  filter: drop-shadow(2px 2px #ab1503) drop-shadow(-2px 2px #ab1503);
+  transition: 0.2s;
+}
+.bottom-right {
+  left: 162px;
+  top: 162px;
+}
+.top-left:before,
+.bottom-right:before,
+.top-left:after,
+.bottom-right:after {
+  position: absolute;
+  content: "";
+}
+
+.top-left:before,
+.bottom-right:before {
+  width: 30px;
+  height: 30px;
+  background-color: #d12511;
+  transform: rotate(-45deg);
+  top: 10px;
+  left: 10px;
+}
+
+.bottom-right:hover {
+  transform: rotare(25deg);
+}
+
+.bottom-right:active {
+  opacity: 0;
+}
+
+.top-left:hover {
+  transform: rotare(25deg);
+}
+.top-left:active {
+  opacity: 0;
+}
+.top-left:after,
+.bottom-right:after {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 10px;
+  height: 10px;
+  top: 5px;
+  left: 35px;
+}
+
+.top-right {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fee8c0;
+  width: 45px;
+  height: 45px;
+  top: 92px;
+  left: 162px;
+  filter: drop-shadow(2px 2px #ceb587) drop-shadow(-2px 2px #ceb587);
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.top-right:before,
+.top-right:after {
+  content: "";
+  position: absolute;
+  background-color: #93522b;
+  width: 100px;
+  height: 3px;
+  left: -5px;
+}
+
+.top-right:hover {
+  transform: rotate(25deg);
+}
+.top-right:active {
+  opacity: 0;
+}
+.top-right:before {
+  top: 15px;
+  transform: rotate(-35deg);
+  box-shadow: 0 -15px #93522b;
+}
+.top-right:after {
+  top: 0;
+  transform: rotate(-15deg);
+  box-shadow: 0 17px #93522b, 0 30px #93522b;
+}
+
+.bottom-left {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #503520;
+  width: 45px;
+  height: 45px;
+  top: 162px;
+  left: 92px;
+  filter: drop-shadow(2px 2px #342010) drop-shadow(-2px 2px #342010);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.bottom-left:before,
+.bottom-left:after {
+  content: "";
+  position: absolute;
+  background-color: #fde7c7;
+  width: 100px;
+  height: 3px;
+  left: -5px;
+}
+.bottom-left:hover {
+  transform: rotate(25deg);
+}
+.bottom-left:active {
+  opacity: 0;
+}
+.bottom-left:before {
+  top: 15px;
+  transform: rotate(-35deg);
+  box-shadow: 0 -15px #fde7c7;
+}
+.bottom-left:after {
+  top: 0;
+  transform: rotate(-15deg);
+  box-shadow: 0 17px #fde7c7, 0 30px #fde7c7;
+}
+.cover {
+  position: absolute;
+  background-color: #cf2611;
+  width: 150px;
+  height: 150px;
+  border: 5px solid #ae1605;
+  z-index: 2;
+  top: 70px;
+  left: 70px;
+  transform-origin: top;
+  transition: 0.2s;
+  overflow: hidden;
+}
+.chocolate-box:hover .cover {
+  transform: rotateX(170deg);
+  box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.5);
+}
+.chocolate-box:hover .cover:before {
+  display: none;
+}
+.cover:before {
+  position: absolute;
+  content: "Dulces para ti";
+  color: #ffead2;
+  font-family: "Brush Script MT", cursive;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 35px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border: 2px double;
+}
+.cover:after {
+  position: absolute;
+  content: "";
+  background-color: #ffead2;
+  height: 10px;
+  width: 100px;
+  transform: rotate(-45deg);
+  left: -20px;
+  box-shadow: -5px 165px #ffead2;
+}
+#white,
+#milk,
+#truffle,
+#truffle2 {
+  position: absolute;
+  width: 100%;
+  color: #ffffff;
+  font-family: "Brush Script MT", cursive;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px #c5705f;
+  transition: 0.1s;
+  display: none;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+}
+#milk {
+  top: 170px;
+  left: -70px;
+}
+#white {
+  top: 100px;
+  left: 250px;
+}
+#truffle {
+  left: 250px;
+  top: 170px;
+}
+
+#truffle2 {
+  left: -80px;
+  top: 100px;
+}
+.tittle {
+  font-size: 40px;
+  font-family: "Andale Mono";
+  color: #ffead2;
+  text-align: center;
+  margin-top: -80px;
+  text-shadow: 2px 2px 4px rgba(249, 122, 122, 0.5);
+}
+@keyframes heartsFall {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(500px);
+    opacity: 1;
+  }
+}
+
+@keyframes heartsFall {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(500px);
+    opacity: 1;
+  }
+}
+
+.cora1::before {
+  content: "❤️";
+  font-size: 40px;
+  position: absolute;
+  animation: heartsFall 3s infinite;
+  left: -60px;
+}
+.cora2::before {
+  content: "❤️";
+  font-size: 40px;
+  position: absolute;
+  animation: heartsFall 3s infinite;
+  left: 500px;
+}
+.cora3::before {
+  content: "❤️";
+  font-size: 40px;
+  position: absolute;
+  animation: heartsFall 3s infinite;
+  left: 300px;
+}
+.cora4::before {
+  content: "❤️";
+  font-size: 40px;
+  position: absolute;
+  animation: heartsFall 3s infinite;
+  left: -300px;
+}
